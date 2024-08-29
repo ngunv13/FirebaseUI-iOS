@@ -43,6 +43,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSBundle *)bundle;
 
+/** @fn initAuthAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:
+    @brief Initializer with several configurations without actionCodeSettings.
+    @param authUI The auth UI object that this auth UI provider associate with.
+    @param signInMethod The email sign in method, which can be password or email link.
+    @param forceSameDevice Indicate whether for the email sign in link to be open on the same device.
+    @param allowNewEmailAccounts Indicate whether allow sign up if the user doesn't exist.
+ */
+- (instancetype)initAuthAuthUI:(FUIAuth *)authUI
+                  signInMethod:(NSString *)signInMethod
+               forceSameDevice:(BOOL)forceSameDevice
+         allowNewEmailAccounts:(BOOL)allowNewEmailAccounts;
+
 /** @fn initAuthAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:actionCodeSetting:
     @brief Initializer with several configurations.
     @param authUI The auth UI object that this auth UI provider associate with.
